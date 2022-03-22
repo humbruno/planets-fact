@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./globals.scss";
+import "./main.scss";
 import App from "./components/App";
 
 ReactDOM.render(
