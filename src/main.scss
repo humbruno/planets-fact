@@ -1,6 +1,6 @@
 // Scss utils
 
-@use "scss" as *;
+@use "scss-utils" as *;
 
 // Google fonts
 
@@ -23,6 +23,18 @@ a,
 a:visited,
 a:active {
   text-decoration: none;
+  color: var(--white);
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: var(--darkBlue);
+  background-image: url("/assets/background-stars.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .btn {

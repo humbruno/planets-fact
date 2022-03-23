@@ -1,0 +1,30 @@
+@use "../../scss-utils" as *;
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+
+  //text color comes from <a> tag in global main.scss file
+
+  h1 {
+    font-family: var(--fontHeadings);
+    font-size: rem(28);
+    font-weight: 400;
+
+    padding: 22px 32px;
+  }
+
+  ul {
+    display: flex;
+    gap: 33px;
+    padding: 33px 40px;
+  }
+
+  li {
+    font-family: var(--fontBody);
+    font-size: rem(11);
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+}
