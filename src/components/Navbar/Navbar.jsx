@@ -1,10 +1,17 @@
 import styles from "./styles.module.scss";
 import { FaBars, FaTimes, FaCircle } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { PlanetContext } from "../../context/PlanetContext";
 
-const Navbar = ({ planets }) => {
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
+const Navbar = () => {
+  const { planetData, setActivePlanet } = useContext(PlanetContext);
+
+  const [click, setClick] = useState(false); //need to update to refer that it's for hamburger menu
+  const handleClick = () => setClick(!click); //need to update to refer that it's for hamburger menu
+
+  function getPlanetIndex(planet) {
+    return planetData.findIndex((obj) => obj.name === planet);
+  }
 
   return (
     <header className={styles.nav}>
@@ -16,10 +23,14 @@ const Navbar = ({ planets }) => {
           click ? `${styles.navMenu} ${styles.active}` : styles.navMenu
         }
       >
-        {planets.map((planet) => {
+        {planetData.map((planet) => {
           return (
-            <a href="#">
-              <li>
+            <li
+              onClick={() =>
+                setActivePlanet(planetData[getPlanetIndex(planet.name)])
+              }
+            >
+              <a href="#">
                 <span>
                   <FaCircle
                     className={styles.planetIcon}
@@ -28,8 +39,8 @@ const Navbar = ({ planets }) => {
                   />
                 </span>
                 {planet.name}
-              </li>
-            </a>
+              </a>
+            </li>
           );
         })}
       </ul>

@@ -60,12 +60,9 @@
 
     a {
       @include breakpoint-down(small) {
-        width: 100%;
-
-        background-image: url("/assets/icon-arrow.svg");
-        background-repeat: no-repeat;
-        background-size: 8px;
-        background-position: right;
+        display: flex;
+        align-items: center;
+        gap: 24px;
       }
     }
 
@@ -76,15 +73,18 @@
       letter-spacing: 1px;
 
       @include breakpoint-down(small) {
-        display: flex;
-        align-items: center;
-        gap: 24px;
-
         font-size: rem(15);
         padding: 20px 0;
         letter-spacing: 1.36px;
 
         border-bottom: 1px solid var(--lightGray);
+
+        width: 100%;
+
+        background-image: url("/assets/icon-arrow.svg");
+        background-repeat: no-repeat;
+        background-size: 8px;
+        background-position: right;
       }
     }
   }

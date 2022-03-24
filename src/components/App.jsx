@@ -1,11 +1,13 @@
-import planetData from "../data/data.json";
+import { PlanetProvider } from "../context/PlanetContext";
+import Main from "./Main/Main";
 import Navbar from "./Navbar/Navbar";
 
 function App() {
   return (
-    <div>
-      <Navbar planets={planetData} />
-    </div>
+    <PlanetProvider>
+      <Navbar />
+      <Main />
+    </PlanetProvider>
   );
 }
 
