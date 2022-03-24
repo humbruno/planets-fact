@@ -4,7 +4,7 @@ import { useState, useContext } from "react";
 import { PlanetContext } from "../../context/PlanetContext";
 
 const Navbar = () => {
-  const { planetData, setActivePlanet, setPlanetText } =
+  const { planetData, setActivePlanet, setPlanetText, setPlanetImage } =
     useContext(PlanetContext);
 
   const [openMenu, setOpenMenu] = useState(false); //need to update to refer that it's for hamburger menu
@@ -17,6 +17,7 @@ const Navbar = () => {
   function handleClick(planet) {
     setActivePlanet(planetData[getPlanetIndex(planet.name)]);
     setPlanetText(planet.overview.content);
+    setPlanetImage(planet.images.planet);
   }
 
   return (

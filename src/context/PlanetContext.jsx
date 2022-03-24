@@ -7,6 +7,7 @@ export const PlanetProvider = ({ children }) => {
   const [activePlanet, setActivePlanet] = useState(planetData[0]);
 
   const [planetText, setPlanetText] = useState(activePlanet.overview.content);
+  const [planetImage, setPlanetImage] = useState(activePlanet.images.planet);
 
   return (
     <PlanetContext.Provider
@@ -16,6 +17,8 @@ export const PlanetProvider = ({ children }) => {
         planetData,
         planetText,
         setPlanetText,
+        planetImage,
+        setPlanetImage,
       }}
     >
       {children}

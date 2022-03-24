@@ -4,24 +4,33 @@ import { useContext, useState } from "react";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 
 const Main = () => {
-  const { activePlanet, planetText, setPlanetText } = useContext(PlanetContext);
+  const {
+    activePlanet,
+    planetText,
+    setPlanetText,
+    planetImage,
+    setPlanetImage,
+  } = useContext(PlanetContext);
 
   function handleOverviewClick() {
     setPlanetText(activePlanet.overview.content);
+    setPlanetImage(activePlanet.images.planet);
   }
 
   function handleStructureClick() {
     setPlanetText(activePlanet.structure.content);
+    setPlanetImage(activePlanet.images.internal);
   }
 
   function handleGeologyClick() {
     setPlanetText(activePlanet.geology.content);
+    setPlanetImage(activePlanet.images.geology);
   }
 
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <img src={activePlanet.images.planet} alt="Planet illustration" />
+        <img src={planetImage} alt="Planet illustration" />
       </div>
 
       <div className={styles.planetInfo}>
