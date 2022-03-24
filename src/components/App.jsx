@@ -1,5 +1,5 @@
 import { PlanetProvider } from "../context/PlanetContext";
-import Main from "./Main/Main";
+import Main from "./Body/Body";
 import Navbar from "./Navbar/Navbar";
 
 function App() {

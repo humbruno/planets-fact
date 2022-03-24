@@ -10,13 +10,23 @@
   text-transform: uppercase;
 
   padding: 33px 40px;
+
   border-bottom: 1px solid var(--lightGray);
+
+  @include breakpoint(large) {
+    padding: 0 40px 33px 40px;
+  }
 
   @include breakpoint-down(medium) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 39px;
+
+    background-color: var(--darkBlue);
+    background-image: url("/assets/background-stars.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 
   @include breakpoint-down(small) {
@@ -24,12 +34,18 @@
     justify-content: space-between;
   }
 
-  //text color comes from <a> tag in global main.scss file
-
   h1 {
+    //text color comes from global scss file
+
     font-family: var(--fontHeadings);
     font-size: rem(28);
     font-weight: 400;
+  }
+
+  a {
+    @include breakpoint(large) {
+      transform: translateY(40%);
+    }
   }
 
   .navMenu {
@@ -58,24 +74,35 @@
       }
     }
 
-    a {
-      @include breakpoint-down(small) {
-        display: flex;
-        align-items: center;
-        gap: 24px;
-      }
-    }
-
     li {
       font-family: var(--fontBody);
+
       font-size: rem(11);
       font-weight: 700;
       letter-spacing: 1px;
+
+      cursor: pointer;
+      border-top: 4px solid transparent;
+      transition: all 150ms ease-in-out;
+
+      @include breakpoint(large) {
+        color: var(--lightGray);
+        padding-top: 29px;
+
+        &:hover {
+          color: var(--white);
+          border-top: 4px solid var(--borderColor); //this color comes from the markup, taken from JSON file
+        }
+      }
 
       @include breakpoint-down(small) {
         font-size: rem(15);
         padding: 20px 0;
         letter-spacing: 1.36px;
+
+        display: flex;
+        align-items: center;
+        gap: 24px;
 
         border-bottom: 1px solid var(--lightGray);
 

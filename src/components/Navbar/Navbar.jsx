@@ -4,13 +4,19 @@ import { useState, useContext } from "react";
 import { PlanetContext } from "../../context/PlanetContext";
 
 const Navbar = () => {
-  const { planetData, setActivePlanet } = useContext(PlanetContext);
+  const { planetData, setActivePlanet, setPlanetText } =
+    useContext(PlanetContext);
 
-  const [click, setClick] = useState(false); //need to update to refer that it's for hamburger menu
-  const handleClick = () => setClick(!click); //need to update to refer that it's for hamburger menu
+  const [openMenu, setOpenMenu] = useState(false); //need to update to refer that it's for hamburger menu
+  const handleOpenMenu = () => setOpenMenu(!openMenu); //need to update to refer that it's for hamburger menu
 
   function getPlanetIndex(planet) {
     return planetData.findIndex((obj) => obj.name === planet);
+  }
+
+  function handleClick(planet) {
+    setActivePlanet(planetData[getPlanetIndex(planet.name)]);
+    setPlanetText(planet.overview.content);
   }
 
   return (
@@ -20,33 +26,30 @@ const Navbar = () => {
       </a>
       <ul
         className={
-          click ? `${styles.navMenu} ${styles.active}` : styles.navMenu
+          openMenu ? `${styles.navMenu} ${styles.active}` : styles.navMenu
         }
       >
         {planetData.map((planet) => {
           return (
             <li
-              onClick={() =>
-                setActivePlanet(planetData[getPlanetIndex(planet.name)])
-              }
+              onClick={() => handleClick(planet)}
+              style={{ "--borderColor": planet.accentColor }}
             >
-              <a href="#">
-                <span>
-                  <FaCircle
-                    className={styles.planetIcon}
-                    size={20}
-                    style={{ color: planet.color }}
-                  />
-                </span>
-                {planet.name}
-              </a>
+              <span>
+                <FaCircle
+                  className={styles.planetIcon}
+                  size={20}
+                  style={{ color: planet.mobileIconColor }}
+                />
+              </span>
+              {planet.name}
             </li>
           );
         })}
       </ul>
 
-      <div className={styles.hamburgerMenu} onClick={handleClick}>
-        {click ? (
+      <div className={styles.hamburgerMenu} onClick={handleOpenMenu}>
+        {openMenu ? (
           <FaTimes size={24} style={{ color: "#fff" }} />
         ) : (
           <FaBars size={24} style={{ color: "#fff" }} />
