@@ -1,12 +1,12 @@
 import { PlanetProvider } from "../context/PlanetContext";
-import Main from "./Body/Body";
+import Body from "./Body/Body";
 import Navbar from "./Navbar/Navbar";
 
 function App() {
   return (
     <PlanetProvider>
       <Navbar />
-      <Main />
+      <Body />
     </PlanetProvider>
   );
 }

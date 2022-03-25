@@ -11,6 +11,10 @@
 
   padding: 33px 40px;
 
+  background-color: var(--darkBlue);
+  background-image: url("/assets/background-stars.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
   border-bottom: 1px solid var(--lightGray);
 
   @include breakpoint(large) {
@@ -22,11 +26,6 @@
     justify-content: center;
     align-items: center;
     gap: 39px;
-
-    background-color: var(--darkBlue);
-    background-image: url("/assets/background-stars.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
 
     padding: 33px 15px;
   }
@@ -63,6 +62,8 @@
       left: -100%;
       width: 100%;
       height: 100vh;
+      overflow-y: scroll;
+
       transition: all 250ms ease-in-out;
       z-index: -1;
       background-color: var(--darkBlue);

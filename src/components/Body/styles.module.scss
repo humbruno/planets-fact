@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 15px;
 
   @include breakpoint-down(medium) {
     flex-direction: column;
@@ -30,8 +31,10 @@
   justify-content: center;
   position: relative;
 
-  @include breakpoint-down(medium) {
-    .mainImage {
+  .mainImage {
+    max-width: 450px;
+
+    @include breakpoint-down(medium) {
       width: 290px;
       height: auto;
     }
@@ -81,12 +84,12 @@
 }
 
 .textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
   @include breakpoint-down(medium) {
     flex: 1;
-
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
   }
 
   @include breakpoint-down(small) {
@@ -95,6 +98,7 @@
 }
 
 .source {
+  margin-top: 0;
   margin-bottom: 15px;
 
   a {
@@ -141,44 +145,10 @@
     background-repeat: no-repeat;
     background-size: 100%;
   }
-
-  button {
-    width: 100%;
-
-    @include breakpoint-down(small) {
-      padding: 0;
-      text-align: center;
-      margin: 20px 0;
-    }
-  }
-}
-
-.hiddenMobile {
-  display: inline;
-  @include breakpoint-down(small) {
-    display: none;
-  }
-}
-
-.active {
-  background-color: var(--accentColor);
-  transition: all 150ms ease-in-out;
-
-  .mobileBorder {
-    @include breakpoint-down(small) {
-      padding-bottom: 17px;
-      transition: border 150ms ease-in-out;
-      border-bottom: 4px solid var(--accentColor);
-    }
-  }
-
-  @include breakpoint-down(small) {
-    background-color: transparent;
-  }
 }
 
 .cardsContainer {
-  padding: 0 165px 50px 165px;
+  padding: 0 165px 30px 165px;
 
   @include breakpoint-down(medium) {
     padding: 0 15px 50px 15px;

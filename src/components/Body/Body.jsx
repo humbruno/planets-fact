@@ -3,6 +3,7 @@ import { PlanetContext } from "../../context/PlanetContext";
 import { useContext, useState } from "react";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import Card from "../Card/Card";
+import Button from "../Button/Button";
 
 const Main = () => {
   const {
@@ -11,7 +12,6 @@ const Main = () => {
     setPlanetText,
     planetImage,
     setPlanetImage,
-    selected,
     setSelected,
     geologyImage,
     setGeologyImage,
@@ -75,41 +75,27 @@ const Main = () => {
           </div>
 
           <div className={styles.categoryButtons}>
-            <button
-              type="button"
-              className={selected === 1 ? `btn ${styles.active}` : "btn"}
-              style={{ "--accentColor": activePlanet.accentColor }}
-              onClick={handleOverviewClick}
-            >
-              <span aria-hidden="true" className={styles.hiddenMobile}>
-                01
-              </span>{" "}
-              <span className={styles.mobileBorder}>Overview</span>
-            </button>
-            <button
-              type="button"
-              className={selected === 2 ? `btn ${styles.active}` : "btn"}
-              style={{ "--accentColor": activePlanet.accentColor }}
-              onClick={handleStructureClick}
-            >
-              <span aria-hidden="true" className={styles.hiddenMobile}>
-                02
-              </span>
-              <span className={styles.hiddenMobile}> Internal</span>{" "}
-              <span className={styles.mobileBorder}>Structure</span>
-            </button>
-            <button
-              type="button"
-              className={selected === 3 ? `btn ${styles.active}` : "btn"}
-              style={{ "--accentColor": activePlanet.accentColor }}
-              onClick={handleGeologyClick}
-            >
-              <span aria-hidden="true" className={styles.hiddenMobile}>
-                03
-              </span>{" "}
-              <span className={styles.mobileBorder}>Surface</span>
-              <span className={styles.hiddenMobile}> Geology</span>
-            </button>
+            <Button
+              id={1}
+              clickFunction={handleOverviewClick}
+              accentColor={activePlanet.accentColor}
+              desktopText="Overview"
+              mobileText="Overview"
+            />
+            <Button
+              id={2}
+              clickFunction={handleStructureClick}
+              accentColor={activePlanet.accentColor}
+              desktopText="Internal Structure"
+              mobileText="Structure"
+            />
+            <Button
+              id={3}
+              clickFunction={handleGeologyClick}
+              accentColor={activePlanet.accentColor}
+              desktopText="Surface Geology"
+              mobileText="Surface"
+            />
           </div>
         </div>
       </div>

@@ -1,0 +1,73 @@
+@use "../../scss-utils" as *;
+
+.btn {
+  width: 100%;
+  padding: 18px 0 14px 28px;
+  border: 0;
+  text-align: left;
+
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--white);
+
+  font-family: var(--fontBody);
+  font-size: rem(12);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15625rem;
+
+  transition: 150ms ease-in-out;
+
+  @include breakpoint(medium) {
+    border: 1px solid var(--white);
+  }
+
+  @include breakpoint(large) {
+    &:hover {
+      border: 1px solid var(--darkGray);
+      background-color: var(--darkGray);
+      transform: scale(1.05);
+    }
+  }
+
+  @include breakpoint-down(small) {
+    padding: 0;
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+
+.hiddenDesktop {
+  display: none;
+
+  @include breakpoint-down(small) {
+    display: inline;
+  }
+}
+
+.hiddenMobile {
+  display: inline;
+
+  @include breakpoint-down(small) {
+    display: none;
+  }
+}
+
+.active {
+  background-color: var(--accentColor);
+  border: 1px solid var(--accentColor);
+  transition: all 150ms ease-in-out;
+
+  @include breakpoint-down(small) {
+    background-color: transparent;
+    border: 0;
+  }
+}
+
+.mobileBorder {
+  @include breakpoint-down(small) {
+    padding-bottom: 17px;
+    transition: border 150ms ease-in-out;
+    border-bottom: 4px solid var(--accentColor);
+  }
+}

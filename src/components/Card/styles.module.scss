@@ -18,7 +18,7 @@ h3 {
   font-family: var(--fontBody);
   font-size: rem(11);
   font-weight: 700;
-  color: var(--darkGray);
+  color: var(--lightGray);
 
   @include breakpoint-down(medium) {
     font-size: rem(8);
