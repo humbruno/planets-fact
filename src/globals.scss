@@ -40,7 +40,7 @@ body {
 
 .btn {
   padding: 18px 0 14px 28px;
-  border: 1px solid var(--white);
+  border: 0;
   text-align: left;
 
   cursor: pointer;
@@ -55,8 +55,14 @@ body {
 
   transition: 150ms ease-in-out;
 
-  &:hover {
-    border: 1px solid var(--darkGray);
-    background-color: var(--darkGray);
+  @include breakpoint(medium) {
+    border: 1px solid var(--white);
+  }
+
+  @include breakpoint(large) {
+    &:hover {
+      border: 1px solid var(--darkGray);
+      background-color: var(--darkGray);
+    }
   }
 }

@@ -2,7 +2,7 @@
 
 .container {
   width: 100%;
-  height: 100vh;
+  //height: 100vh;
   padding: 212px 165px 87px 165px;
 
   color: white;
@@ -10,12 +10,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 
   @include breakpoint-down(medium) {
     flex-direction: column;
     height: auto;
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  @include breakpoint-down(medium) {
+    padding-bottom: 30px;
   }
 }
 
@@ -142,18 +147,8 @@
 
     @include breakpoint-down(small) {
       padding: 0;
-      border: 0;
-      background-color: transparent;
       text-align: center;
       margin: 20px 0;
-    }
-  }
-
-  span {
-    //color: var(--lightGray);
-
-    @include breakpoint-down(small) {
-      display: none;
     }
   }
 }
@@ -162,5 +157,39 @@
   display: inline;
   @include breakpoint-down(small) {
     display: none;
+  }
+}
+
+.active {
+  background-color: var(--accentColor);
+  transition: all 150ms ease-in-out;
+
+  .mobileBorder {
+    @include breakpoint-down(small) {
+      padding-bottom: 17px;
+      transition: border 150ms ease-in-out;
+      border-bottom: 4px solid var(--accentColor);
+    }
+  }
+
+  @include breakpoint-down(small) {
+    background-color: transparent;
+  }
+}
+
+.cardsContainer {
+  padding: 0 165px 50px 165px;
+
+  @include breakpoint-down(medium) {
+    padding: 0 15px 50px 15px;
+  }
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+
+  @include breakpoint-down(small) {
+    flex-direction: column;
   }
 }
