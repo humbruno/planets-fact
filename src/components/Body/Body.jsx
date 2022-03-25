@@ -10,21 +10,28 @@ const Main = () => {
     setPlanetText,
     planetImage,
     setPlanetImage,
+    selected,
+    setSelected,
   } = useContext(PlanetContext);
+
+  //const [selected, setSelected] = useState(0);
 
   function handleOverviewClick() {
     setPlanetText(activePlanet.overview.content);
     setPlanetImage(activePlanet.images.planet);
+    setSelected(1);
   }
 
   function handleStructureClick() {
     setPlanetText(activePlanet.structure.content);
     setPlanetImage(activePlanet.images.internal);
+    setSelected(2);
   }
 
   function handleGeologyClick() {
     setPlanetText(activePlanet.geology.content);
     setPlanetImage(activePlanet.images.geology);
+    setSelected(3);
   }
 
   return (
@@ -47,13 +54,40 @@ const Main = () => {
         </p>
 
         <div className={styles.categoryButtons}>
-          <button type="button" className="btn" onClick={handleOverviewClick}>
+          <button
+            type="button"
+            className="btn"
+            style={
+              selected === 1
+                ? { backgroundColor: activePlanet.accentColor, border: "none" }
+                : null
+            }
+            onClick={handleOverviewClick}
+          >
             <span>01</span> Overview
           </button>
-          <button type="button" className="btn" onClick={handleStructureClick}>
+          <button
+            type="button"
+            className="btn"
+            style={
+              selected === 2
+                ? { backgroundColor: activePlanet.accentColor, border: "none" }
+                : null
+            }
+            onClick={handleStructureClick}
+          >
             <span>02</span> Internal Structure
           </button>
-          <button type="button" className="btn" onClick={handleGeologyClick}>
+          <button
+            type="button"
+            className="btn"
+            style={
+              selected === 3
+                ? { backgroundColor: activePlanet.accentColor, border: "none" }
+                : null
+            }
+            onClick={handleGeologyClick}
+          >
             <span>03</span> Surface Geology
           </button>
         </div>

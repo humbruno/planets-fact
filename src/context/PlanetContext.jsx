@@ -9,6 +9,8 @@ export const PlanetProvider = ({ children }) => {
   const [planetText, setPlanetText] = useState(activePlanet.overview.content);
   const [planetImage, setPlanetImage] = useState(activePlanet.images.planet);
 
+  const [selected, setSelected] = useState(1);
+
   return (
     <PlanetContext.Provider
       value={{
@@ -19,6 +21,8 @@ export const PlanetProvider = ({ children }) => {
         setPlanetText,
         planetImage,
         setPlanetImage,
+        selected,
+        setSelected,
       }}
     >
       {children}
