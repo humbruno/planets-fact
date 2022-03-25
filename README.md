@@ -22,44 +22,35 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](.github/preview.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://github.com/humbruno/planets-fact)
+- [Live Site URL](https://planets.brunosantos.dev/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- SCSS
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
+- Desktop-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Vite](https://vitejs.dev/) - Development environment for React
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+What a ride! This was my first React project and while there are definitely things to polish up, I am VERY proud of the end-result! I'm also looking forward to revisiting this project in a few months to compare my skills evolution.
 
-To see how you can add code snippets, see below:
+The initial proposal of this project was to have a different URL for each planet but I decide to take a different approach to open up scalability (not sure how! new planets would need to appear inside our solar system!)
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+Instead of hard-coding each page and its contents, I decided to use JSON data containing each planet's information and map through that file using JavaScript/React to render the contents according to the interface actions (navbar clicks, buttons).
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+I reached the end-result rather quickly but wasn't quite happy with it. I quickly noticed I didn't take advantage of one the biggest selling points of React - components!
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
+Once I had the page fully functional, I started separating my code into different components. Looking back, this is something I should have planned before starting to write code, so that I wouldn't need to backtrack. Definitely a lesson learned for the future!
+
+Can't wait to continue building more things with React, the possibilities are amazing!
