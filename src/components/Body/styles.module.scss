@@ -124,8 +124,17 @@
   @include breakpoint-down(small) {
     position: fixed;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
     top: 103px;
     z-index: 10;
+    border-bottom: 1px solid var(--lightGray);
+    margin-left: -15px;
+
+    background-color: var(--darkBlue);
+    background-image: url("/assets/background-stars.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 
   button {
@@ -135,6 +144,8 @@
       padding: 0;
       border: 0;
       background-color: transparent;
+      text-align: center;
+      margin: 20px 0;
     }
   }
 
@@ -144,5 +155,12 @@
     @include breakpoint-down(small) {
       display: none;
     }
+  }
+}
+
+.hiddenMobile {
+  display: inline;
+  @include breakpoint-down(small) {
+    display: none;
   }
 }

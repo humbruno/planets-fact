@@ -95,7 +95,8 @@ const Main = () => {
             }
             onClick={handleStructureClick}
           >
-            <span aria-hidden="true">02</span> Internal Structure
+            <span aria-hidden="true">02</span>{" "}
+            <span className={styles.hiddenMobile}>Internal</span> Structure
           </button>
           <button
             type="button"
@@ -107,7 +108,8 @@ const Main = () => {
             }
             onClick={handleGeologyClick}
           >
-            <span aria-hidden="true">03</span> Surface Geology
+            <span aria-hidden="true">03</span> Surface{" "}
+            <span className={styles.hiddenMobile}>Geology</span>
           </button>
         </div>
       </div>
