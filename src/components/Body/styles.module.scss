@@ -14,6 +14,8 @@
   @include breakpoint-down(medium) {
     flex-direction: column;
     height: auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
@@ -21,12 +23,27 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  position: relative;
 
   @include breakpoint-down(medium) {
-    img {
+    .mainImage {
       width: 290px;
       height: auto;
     }
+  }
+}
+
+.geologyImage {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 160px;
+  height: auto;
+
+  @include breakpoint-down(medium) {
+    width: 120px;
   }
 }
 
@@ -36,6 +53,13 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
+
+  @include breakpoint-down(medium) {
+    flex-direction: row;
+    max-width: 100%;
+    align-items: center;
+    margin-top: 80px;
+  }
 
   h2 {
     font-family: var(--fontHeadings);
@@ -48,6 +72,20 @@
     font-family: var(--fontBody);
     font-size: rem(14);
     font-weight: 400;
+  }
+}
+
+.textContainer {
+  @include breakpoint-down(medium) {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @include breakpoint-down(small) {
+    text-align: center;
   }
 }
 
@@ -79,11 +117,32 @@
   flex-direction: column;
   gap: 16px;
 
+  @include breakpoint-down(medium) {
+    flex: 1;
+  }
+
+  @include breakpoint-down(small) {
+    position: fixed;
+    flex-direction: row;
+    top: 103px;
+    z-index: 10;
+  }
+
   button {
     width: 100%;
+
+    @include breakpoint-down(small) {
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+    }
   }
 
   span {
     //color: var(--lightGray);
+
+    @include breakpoint-down(small) {
+      display: none;
+    }
   }
 }

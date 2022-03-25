@@ -27,6 +27,8 @@
     background-image: url("/assets/background-stars.svg");
     background-repeat: no-repeat;
     background-size: 100%;
+
+    padding: 33px 15px;
   }
 
   @include breakpoint-down(small) {

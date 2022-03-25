@@ -8,6 +8,7 @@ export const PlanetProvider = ({ children }) => {
 
   const [planetText, setPlanetText] = useState(activePlanet.overview.content);
   const [planetImage, setPlanetImage] = useState(activePlanet.images.planet);
+  const [geologyImage, setGeologyImage] = useState(false);
 
   const [selected, setSelected] = useState(1);
 
@@ -23,6 +24,8 @@ export const PlanetProvider = ({ children }) => {
         setPlanetImage,
         selected,
         setSelected,
+        geologyImage,
+        setGeologyImage,
       }}
     >
       {children}

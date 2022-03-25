@@ -10,6 +10,7 @@ const Navbar = () => {
     setPlanetText,
     setPlanetImage,
     setSelected,
+    setGeologyImage,
   } = useContext(PlanetContext);
 
   const [openMenu, setOpenMenu] = useState(false); //need to update to refer that it's for hamburger menu
@@ -23,7 +24,9 @@ const Navbar = () => {
     setActivePlanet(planetData[getPlanetIndex(planet.name)]);
     setPlanetText(planet.overview.content);
     setPlanetImage(planet.images.planet);
+    setGeologyImage(false);
     setSelected(1);
+    setOpenMenu(false);
   }
 
   return (
